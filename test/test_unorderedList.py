@@ -2,23 +2,41 @@ from unorderedList import UnorderedList
 
 
 def test_isEmpty():
-    myUL = UnorderedList()
-    assert myUL.isEmpty()
+    myList = UnorderedList()
+    assert myList.isEmpty()
 
 
 def test_add_search():
-    myUL = UnorderedList()
-    myUL.add(1)
-    myUL.add(2)
-    myUL.add(3)
-    myUL.add(5)
-    myUL.add(6)
-    assert myUL.search(6)
-    #assert myUL.search(4)
+    myList = UnorderedList()
+    myList.add(1)
+    myList.add(2)
+    myList.add(3)
+    myList.add(5)
+    myList.add(6)
+    assert myList.search(6)
+    assert not myList.search(4)
 
 
 def test_size():
-    myUL = UnorderedList()
-    myUL.add(1)
-    myUL.add(2)
-    assert myUL.size() == 2
+    myList = UnorderedList()
+    myList.add(1)
+    myList.add(2)
+    assert myList.size() == 2
+
+
+def test_remove():
+    myList = UnorderedList()
+    myList.add(1)
+    myList.add(2)
+    myList.add(3)
+    myList.remove(2)
+    assert not myList.search(2)
+
+
+def test_append():
+    myList = UnorderedList()
+    myList.add(1)
+    myList.add(2)
+    myList.add(3)
+    myList.append(0)
+    assert myList.search(0)

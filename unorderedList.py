@@ -30,3 +30,36 @@ class UnorderedList:
             else:
                 current = current.getNext()
         return found
+
+    def remove(self, item):
+        current = self.head
+        previous = None
+        found = False
+        while not found:
+            if current.getData() == item:
+                found = True
+            else:
+                previous = current
+                current = current.getNext()
+
+        if previous == None:
+            self.head = current.getNext()
+        else:
+            previous.setNext(current.getNext())
+
+    def append(self, item):
+        current = self.head
+
+        while current.getNext() != None:
+            current = current.getNext()
+
+        current.setNext(Node(item))
+
+    def index(self, item):
+        pass
+
+    def insert(self, pos, item):
+        pass
+
+    def pop(self, pos=-1):
+        pass
