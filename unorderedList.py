@@ -4,6 +4,7 @@ from node import Node
 class UnorderedList:
     def __init__(self):
         self.head = None
+        self.tail = None
 
     def isEmpty(self):
         return self.head == None
@@ -12,6 +13,8 @@ class UnorderedList:
         newNode = Node(item)
         newNode.setNext(self.head)
         self.head = newNode
+        if self.tail == None:
+            self.tail = newNode
 
     def size(self):
         current = self.head
@@ -41,19 +44,22 @@ class UnorderedList:
             else:
                 previous = current
                 current = current.getNext()
-
+        # Check if we are at head
         if previous == None:
             self.head = current.getNext()
         else:
             previous.setNext(current.getNext())
+            if current.getNext() == None:
+                self.tail = previous
 
     def append(self, item):
-        current = self.head
-
-        while current.getNext() != None:
-            current = current.getNext()
-
-        current.setNext(Node(item))
+        newNode = Node(item)
+        if self.tail == None:
+            self.head = newNode
+            self.tail = newNode
+        else:
+            self.tail.setNext(newNode)
+            self.tail = newNode
 
     def index(self, item):
         pass
@@ -63,3 +69,24 @@ class UnorderedList:
 
     def pop(self, pos=-1):
         pass
+
+    def toList(self):
+        outputList = []
+        current = self.head
+
+        while current != None:
+            outputList.append(current.getData())
+            current = current.getNext()
+
+        return outputList
+
+
+if __name__ == "__main__":
+    mylist = UnorderedList()
+    mylist.add(1)
+    mylist.add(2)
+    mylist.add(3)
+    mylist.append(0)
+
+    print("\n Let's convert to a python list.")
+    print(mylist.toList())
