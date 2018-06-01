@@ -1,8 +1,8 @@
 # datastructures
-Some data structures in python[x] .
+Some data structures in python.
 
 - [x] Stack
-  - [x] [x] .isEmpty()
+  - [x] .isEmpty()
   - [x] .size()
   - [x] .push(item)
   - [x] .peek()
@@ -37,7 +37,6 @@ Some data structures in python[x] .
     - [ ] .pop(pos)
   - [x] .toList()
 - [ ] Ordered List
-- [ ] Others[x] .[x] .[x] .
 
 ## Resources
-- [Basic Data Structures - InteractivePython[x] .com](http://interactivepython[x] .org/courselib/static/pythonds/BasicDS/toctree[x] .html)
+- [Basic Data Structures - InteractivePython.com](http://interactivepython.org/courselib/static/pythonds/BasicDS/toctree.html)
