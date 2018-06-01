@@ -1,7 +1,7 @@
 from node import Node
 
 
-class UnorderedList:
+class LinkedList:
     def __init__(self):
         self.head = None
         self.tail = None
@@ -82,7 +82,7 @@ class UnorderedList:
 
 
 if __name__ == "__main__":
-    mylist = UnorderedList()
+    mylist = LinkedList()
     mylist.add(1)
     mylist.add(2)
     mylist.add(3)

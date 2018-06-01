@@ -1,13 +1,13 @@
-from unorderedList import UnorderedList
+from linkedList import LinkedList
 
 
 def test_isEmpty():
-    mylist = UnorderedList()
+    mylist = LinkedList()
     assert mylist.isEmpty()
 
 
 def test_add_search():
-    mylist = UnorderedList()
+    mylist = LinkedList()
     mylist.add(1)
     mylist.add(2)
     mylist.add(3)
@@ -18,14 +18,14 @@ def test_add_search():
 
 
 def test_size():
-    mylist = UnorderedList()
+    mylist = LinkedList()
     mylist.add(1)
     mylist.add(2)
     assert mylist.size() == 2
 
 
 def test_remove():
-    mylist = UnorderedList()
+    mylist = LinkedList()
     mylist.add(1)
     mylist.add(2)
     mylist.add(3)
@@ -38,7 +38,7 @@ def test_remove():
 
 
 def test_append():
-    mylist = UnorderedList()
+    mylist = LinkedList()
     mylist.append(0)
     assert mylist.toList() == [0]
     mylist.add(1)
@@ -48,7 +48,7 @@ def test_append():
 
 
 def test_tolist():
-    mylist = UnorderedList()
+    mylist = LinkedList()
     mylist.add(1)
     mylist.add(2)
     mylist.add(3)
