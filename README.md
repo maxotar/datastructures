@@ -7,11 +7,17 @@ Some data structures in python.
   - [x] .push(item)
   - [x] .peek()
   - [x] .pop()
+  - [x] .clear()
+  - [x] .toList()
+  - [x] .\_\_str\_\_()
 - [x] Queue
   - [x] .isEmpty()
   - [x] .size()
   - [x] .enqueue()
   - [x] .dequeue()
+  - [x] .clear()
+  - [x] .toList()
+  - [x] .\_\_str\_\_()
 - [x] Deque
   - [x] .isEmpty()
   - [x] .size()
@@ -19,6 +25,9 @@ Some data structures in python.
   - [x] .addRear(item)
   - [x] .removeFront()
   - [x] .removeRear()
+  - [x] .clear()
+  - [x] .toList()
+  - [x] .\_\_str\_\_()
 - [x] Node
   - [x] .getData()
   - [x] .getNext()
@@ -32,10 +41,12 @@ Some data structures in python.
   - [x] .remove(item)
   - [x] .search(item)
   - [x] .index(item)
-  - [x] .insert(pos, item)
+  - [ ] .insert(pos, item)
   - [ ] .pop()
     - [ ] .pop(pos)
+  - [x] .clear()
   - [x] .toList()
+  - [x] .\_\_str\_\_()
 - [ ] Ordered List
 
 ## Resources

@@ -30,3 +30,20 @@ def test_size():
     myStack.push(3)
     myStack.push(4)
     assert myStack.size() == 2
+
+
+def test_toList():
+    myStack = Stack()
+    myStack.push(3)
+    myStack.push(4)
+    assert myStack.toList() == [3, 4]
+
+
+def test_clear():
+    myStack = Stack()
+    myStack.push(3)
+    myStack.push(4)
+    myStack.clear()
+    assert myStack.size() == 0
+    assert myStack.isEmpty()
+    assert myStack.toList() == []

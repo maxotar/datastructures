@@ -13,3 +13,12 @@ class Queue:
 
     def size(self):
         return len(self.items)
+
+    def clear(self):
+        self.items = []
+
+    def toList(self):
+        return self.items
+
+    def __str__(self):
+        return str(self.toList())
