@@ -17,40 +17,40 @@ class LinkedList:
             self.tail = newNode
 
     def size(self):
-        current = self.head
+        cur = self.head
         count = 0
-        while current != None:
+        while cur != None:
             count += 1
-            current = current.getNext()
+            cur = cur.getNext()
         return count
 
     def search(self, item):
-        current = self.head
+        cur = self.head
         found = False
-        while current != None and not found:
-            if current.getData() == item:
+        while cur != None and not found:
+            if cur.getData() == item:
                 found = True
             else:
-                current = current.getNext()
+                cur = cur.getNext()
         return found
 
     def remove(self, item):
-        current = self.head
-        previous = None
+        cur = self.head
+        prev = None
         found = False
         while not found:
-            if current.getData() == item:
+            if cur.getData() == item:
                 found = True
             else:
-                previous = current
-                current = current.getNext()
+                prev = cur
+                cur = cur.getNext()
         # Check if we are at head
-        if previous == None:
-            self.head = current.getNext()
+        if prev == None:
+            self.head = cur.getNext()
         else:
-            previous.setNext(current.getNext())
-            if current.getNext() == None:
-                self.tail = previous
+            prev.setNext(cur.getNext())
+            if cur.getNext() == None:
+                self.tail = prev
 
     def append(self, item):
         newNode = Node(item)
@@ -62,21 +62,48 @@ class LinkedList:
             self.tail = newNode
 
     def index(self, item):
-        pass
+        cur = self.head
+        count = 0
+        index = -1
+        while cur != None:
+            if cur.getData() == item:
+                index = count
+                break
+            else:
+                cur = cur.getNext()
+                count += 1
+        return index
 
     def insert(self, pos, item):
-        pass
+        if pos == 0:
+            self.add(item)
+        elif pos == -1:
+            self.append(item)
+        else:
+            index = 0
+            prev = None
+            cur = self.head
+            while cur != None:
+                if index == pos:
+                    newNode = Node(item)
+                    prev.setNext(newNode)
+                    newNode.setNext(cur)
+                    break
+                else:
+                    prev = cur
+                    cur = cur.getNext()
+                    index += 1
 
     def pop(self, pos=-1):
         pass
 
     def toList(self):
         outputList = []
-        current = self.head
+        cur = self.head
 
-        while current != None:
-            outputList.append(current.getData())
-            current = current.getNext()
+        while cur != None:
+            outputList.append(cur.getData())
+            cur = cur.getNext()
 
         return outputList
 

@@ -53,3 +53,31 @@ def test_tolist():
     mylist.add(2)
     mylist.add(3)
     assert mylist.toList() == [3, 2, 1]
+
+
+def test_index():
+    mylist = LinkedList()
+    mylist.add(1)
+    mylist.add(2)
+    mylist.add(3)
+    assert mylist.index(3) == 0
+    assert mylist.index(2) == 1
+    assert mylist.index(1) == 2
+    assert mylist.index(4) == -1
+
+
+def test_insert():
+    mylist = LinkedList()
+    mylist.add(1)
+    mylist.add(2)
+    mylist.add(3)
+    mylist.insert(0, 4)
+    assert mylist.toList() == [4, 3, 2, 1]
+    mylist.insert(-1, 0)
+    assert mylist.toList() == [4, 3, 2, 1, 0]
+    mylist.insert(1, 3.5)
+    assert mylist.toList() == [4, 3.5, 3, 2, 1, 0]
+    mylist.insert(3, 2.5)
+    assert mylist.toList() == [4, 3.5, 3, 2.5, 2, 1, 0]
+    mylist.insert(300, 2.5)
+    assert mylist.toList() == [4, 3.5, 3, 2.5, 2, 1, 0]

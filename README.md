@@ -5,7 +5,7 @@ Some data structures in python.
 - [x] Queue
 - [x] Deque
 - [x] Node
-- [ ] Unordered List
+- [ ] Linked List
 - [ ] Ordered List
 - [ ] Others...
 
