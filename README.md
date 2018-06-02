@@ -1,4 +1,5 @@
 # datastructures
+
 Some data structures in python.
 
 - [x] Stack
@@ -33,7 +34,7 @@ Some data structures in python.
   - [x] .getNext()
   - [x] .setData(item)
   - [x] .setNext(node)
-- [ ] Linked List
+- [x] Linked List
   - [x] .isEmpty()
   - [x] .size()
   - [x] .add(item)
@@ -43,11 +44,23 @@ Some data structures in python.
   - [x] .index(item)
   - [x] .insert(pos, item)
   - [x] .pop()
-    - [x] .pop(pos)
+  - [x] .pop(pos)
   - [x] .clear()
   - [x] .toList()
   - [x] .\_\_str\_\_()
-- [ ] Ordered List
+- [x] Ordered List
+  - [x] .isEmpty()
+  - [x] .size()
+  - [x] .add(item)
+  - [x] .remove(item)
+  - [x] .search(item)
+  - [x] .index(item)
+  - [x] .pop()
+  - [x] .pop(pos)
+  - [x] .clear()
+  - [x] .toList()
+  - [x] .\_\_str\_\_()
 
 ## Resources
+
 - [Basic Data Structures - InteractivePython.com](http://interactivepython.org/courselib/static/pythonds/BasicDS/toctree.html)
