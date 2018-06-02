@@ -1,4 +1,4 @@
-from linkedList import LinkedList
+from datastructures.linkedList import LinkedList
 import pytest
 
 

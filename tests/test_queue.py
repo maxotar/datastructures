@@ -1,4 +1,4 @@
-from queue import Queue
+from datastructures.queue import Queue
 
 
 def test_isEmpty():

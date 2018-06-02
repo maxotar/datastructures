@@ -1,4 +1,4 @@
-from stack import Stack
+from datastructures.stack import Stack
 
 
 def test_isEmpty_empty_stack():

@@ -1,4 +1,4 @@
-from deque import Deque
+from datastructures.deque import Deque
 
 
 def test_size():

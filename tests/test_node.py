@@ -1,4 +1,4 @@
-from node import Node
+from datastructures.node import Node
 
 
 def test_getData_setData():
