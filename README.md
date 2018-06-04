@@ -30,10 +30,8 @@ Some data structures in python.
   - [x] .toList()
   - [x] .\_\_str\_\_()
 - [x] Node
-  - [x] .getData()
-  - [x] .getNext()
-  - [x] .setData(item)
-  - [x] .setNext(node)
+  - [x] .data
+  - [x] .next
 - [x] Linked List
   - [x] .isEmpty()
   - [x] .size()
@@ -60,6 +58,19 @@ Some data structures in python.
   - [x] .clear()
   - [x] .toList()
   - [x] .\_\_str\_\_()
+- [ ] Binary Tree
+  - [x] .data
+  - [x] .left
+  - [x] .right
+  - [x] .insertLeft(data)
+  - [x] .insertRight(data)
+  - [ ] .preorder()
+  - [ ] .inorder()
+  - [ ] .postorder()
+  - [ ] .levelorder()
+  - [ ] .height()
+  - [ ] .toList()
+  - [ ] .\_\_str\_\_()
 
 ## Resources
 
