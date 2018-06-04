@@ -12,7 +12,7 @@ class LinkedList:
 
     def add(self, item):
         newNode = Node(item)
-        newNode.setNext(self.head)
+        newNode.next = self.head
         self.head = newNode
         if self.tail == None:
             self.tail = newNode
@@ -24,10 +24,10 @@ class LinkedList:
     def search(self, item):
         cur = self.head
         while cur is not None:
-            if cur.getData() == item:
+            if cur.data == item:
                 return True
             else:
-                cur = cur.getNext()
+                cur = cur.next
         return False
 
     def remove(self, item):
@@ -35,21 +35,21 @@ class LinkedList:
             prev = None
             cur = self.head
             while cur is not None:
-                if cur.getData() == item:
+                if cur.data == item:
                     if self.length == 1:
                         self.head = None
                         self.tail = None
                     elif prev == None:
-                        self.head = cur.getNext()
+                        self.head = cur.next
                     else:
-                        prev.setNext(cur.getNext())
-                        if cur.getNext() == None:
+                        prev.next = cur.next
+                        if cur.next == None:
                             self.tail = prev
                     self.length -= 1
                     return
                 else:
                     prev = cur
-                    cur = cur.getNext()
+                    cur = cur.next
 
     def append(self, item):
         newNode = Node(item)
@@ -57,7 +57,7 @@ class LinkedList:
             self.head = newNode
             self.tail = newNode
         else:
-            self.tail.setNext(newNode)
+            self.tail.next = newNode
             self.tail = newNode
         self.length += 1
 
@@ -66,11 +66,11 @@ class LinkedList:
         count = 0
         index = -1
         while cur is not None:
-            if cur.getData() == item:
+            if cur.data == item:
                 index = count
                 break
             else:
-                cur = cur.getNext()
+                cur = cur.next
                 count += 1
         return index
 
@@ -96,15 +96,15 @@ class LinkedList:
             if index == pos:
                 newNode = Node(item)
                 if prev is not None:
-                    prev.setNext(newNode)
+                    prev.next = newNode
                 else:
                     self.head = newNode
-                newNode.setNext(cur)
+                newNode.next = cur
                 self.length += 1
                 break
             else:
                 prev = cur
-                cur = cur.getNext()
+                cur = cur.next
                 index += 1
 
     def pop(self, pos=-1):
@@ -123,22 +123,22 @@ class LinkedList:
         cur = self.head
         while cur is not None:
             if index == pos:
-                if prev == None and cur.getNext() == None:
+                if prev == None and cur.next == None:
                     self.head = None
                     self.tail = None
-                elif cur.getNext() == None:
+                elif cur.next == None:
                     self.tail = prev
-                    self.tail.setNext(None)
+                    self.tail.next = None
                 elif prev == None:
-                    self.head = cur.getNext()
+                    self.head = cur.next
                 else:
-                    prev.setNext(cur.getNext())
+                    prev.next = cur.next
 
                 self.length -= 1
-                return cur.getData()
+                return cur.data
             else:
                 prev = cur
-                cur = cur.getNext()
+                cur = cur.next
                 index += 1
 
     def toList(self):
@@ -146,8 +146,8 @@ class LinkedList:
         cur = self.head
 
         while cur is not None:
-            outputList.append(cur.getData())
-            cur = cur.getNext()
+            outputList.append(cur.data)
+            cur = cur.next
 
         return outputList
 
