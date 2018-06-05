@@ -1,3 +1,6 @@
+from datastructures.queue import Queue
+
+
 class BinaryTree:
     def __init__(self, data, left=None, right=None):
         self.data = data
@@ -42,14 +45,14 @@ class BinaryTree:
         yield from self.right.postorder() if self.right else()
         yield self.data
 
-
-if __name__ == "__main__":
-    a = BinaryTree(1)
-    a.left = BinaryTree(2)
-    a.left.left = BinaryTree(4)
-    a.left.right = BinaryTree(5)
-
-    a.right = BinaryTree(3)
+    def levelorder(self):
+        myq = Queue()
+        myq.enqueue(self)
+        while not myq.isEmpty():
+            cur = myq.dequeue()
+            yield cur.data
+            myq.enqueue(cur.left) if cur.left else()
+            myq.enqueue(cur.right) if cur.right else()
 
 
 # Iterator --> https://stackoverflow.com/questions/19151/build-a-basic-python-iterator#24377
