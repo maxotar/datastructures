@@ -22,39 +22,24 @@ class BinaryTree:
 
     def preorder(self):
         yield self.data
-        if self.left:
-            for nodeData in self.left.preorder():
-                yield nodeData
-        if self.right:
-            for nodeData in self.right.preorder():
-                yield nodeData
+        yield from self.left.preorder() if self.left else()
+        yield from self.right.preorder() if self.right else()
 
-        # #Alternative method using extend
+        # # Alternative method using extend
         # nodes = []
-        # if self:
-        #     nodes.append(self.data)
-        #     if self.left:
-        #         nodes.extend(self.left.preorder())
-        #     if self.right:
-        #         nodes.extend(self.right.preorder())
+        # nodes.append(self.data)
+        # nodes.extend(self.left.preorder()) if self.left else()
+        # nodes.extend(self.right.preorder()) if self.right else()
         # return nodes
 
     def inorder(self):
-        if self.left:
-            for nodeData in self.left.inorder():
-                yield nodeData
+        yield from self.left.inorder() if self.left else()
         yield self.data
-        if self.right:
-            for nodeData in self.right.inorder():
-                yield nodeData
+        yield from self.right.inorder() if self.right else()
 
     def postorder(self):
-        if self.left:
-            for nodeData in self.left.postorder():
-                yield nodeData
-        if self.right:
-            for nodeData in self.right.postorder():
-                yield nodeData
+        yield from self.left.postorder() if self.left else()
+        yield from self.right.postorder() if self.right else()
         yield self.data
 
 
