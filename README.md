@@ -64,9 +64,9 @@ Some data structures in python.
   - [x] .right
   - [x] .insertLeft(data)
   - [x] .insertRight(data)
-  - [ ] .preorder()
-  - [ ] .inorder()
-  - [ ] .postorder()
+  - [x] .preorder()
+  - [x] .inorder()
+  - [x] .postorder()
   - [ ] .levelorder()
   - [ ] .height()
   - [ ] .toList()
