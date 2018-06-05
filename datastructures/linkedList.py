@@ -8,13 +8,13 @@ class LinkedList:
         self.length = 0
 
     def isEmpty(self):
-        return self.head == None
+        return not self.head
 
     def add(self, item):
         newNode = Node(item)
         newNode.next = self.head
         self.head = newNode
-        if self.tail == None:
+        if not self.tail:
             self.tail = newNode
         self.length += 1
 
@@ -23,7 +23,7 @@ class LinkedList:
 
     def search(self, item):
         cur = self.head
-        while cur is not None:
+        while cur:
             if cur.data == item:
                 return True
             else:
@@ -34,16 +34,16 @@ class LinkedList:
         if self.length > 0:
             prev = None
             cur = self.head
-            while cur is not None:
+            while cur:
                 if cur.data == item:
                     if self.length == 1:
                         self.head = None
                         self.tail = None
-                    elif prev == None:
+                    elif not prev:
                         self.head = cur.next
                     else:
                         prev.next = cur.next
-                        if cur.next == None:
+                        if not cur.next:
                             self.tail = prev
                     self.length -= 1
                     return
@@ -53,7 +53,7 @@ class LinkedList:
 
     def append(self, item):
         newNode = Node(item)
-        if self.tail == None:
+        if not self.tail:
             self.head = newNode
             self.tail = newNode
         else:
@@ -65,7 +65,7 @@ class LinkedList:
         cur = self.head
         count = 0
         index = -1
-        while cur is not None:
+        while cur:
             if cur.data == item:
                 index = count
                 break
@@ -75,7 +75,7 @@ class LinkedList:
         return index
 
     def insert(self, pos=None, item=None):
-        if pos == None or item == None:
+        if pos is None or item is None:
             raise ValueError('invalid arguments')
         if not isinstance(pos, int):
             raise TypeError('integer argument expected')
@@ -92,10 +92,10 @@ class LinkedList:
         index = 0
         prev = None
         cur = self.head
-        while cur is not None:
+        while cur:
             if index == pos:
                 newNode = Node(item)
-                if prev is not None:
+                if prev:
                     prev.next = newNode
                 else:
                     self.head = newNode
@@ -121,15 +121,15 @@ class LinkedList:
         index = 0
         prev = None
         cur = self.head
-        while cur is not None:
+        while cur:
             if index == pos:
-                if prev == None and cur.next == None:
+                if not prev and not cur.next:
                     self.head = None
                     self.tail = None
-                elif cur.next == None:
+                elif not cur.next:
                     self.tail = prev
                     self.tail.next = None
-                elif prev == None:
+                elif not prev:
                     self.head = cur.next
                 else:
                     prev.next = cur.next
@@ -145,7 +145,7 @@ class LinkedList:
         outputList = []
         cur = self.head
 
-        while cur is not None:
+        while cur:
             outputList.append(cur.data)
             cur = cur.next
 

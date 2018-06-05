@@ -4,8 +4,8 @@ from datastructures.binaryTree import BinaryTree
 def test_creation():
     root = BinaryTree(7)
     assert root.data == 7
-    assert root.left == None
-    assert root.right == None
+    assert root.left is None
+    assert root.right is None
 
 
 def test_insertion():

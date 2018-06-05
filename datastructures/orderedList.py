@@ -7,7 +7,7 @@ class OrderedList:
         self.length = 0
 
     def isEmpty(self):
-        return self.head == None
+        return not self.head
 
     def size(self):
         return self.length
@@ -16,7 +16,7 @@ class OrderedList:
         prev = None
         cur = self.head
         stop = False
-        while cur is not None and not stop:
+        while cur and not stop:
             if cur.data > item:
                 stop = True
             else:
@@ -24,7 +24,7 @@ class OrderedList:
                 cur = cur.next
 
         newNode = Node(item)
-        if prev is None:
+        if not prev:
             self.head = newNode
         else:
             prev.next = newNode
@@ -35,16 +35,16 @@ class OrderedList:
         if self.length > 0:
             prev = None
             cur = self.head
-            while cur is not None:
+            while cur:
                 if cur.data == item:
                     if self.length == 1:
                         self.head = None
                         self.tail = None
-                    elif prev == None:
+                    elif not prev:
                         self.head = cur.next
                     else:
                         prev.next = cur.next
-                        if cur.next == None:
+                        if not cur.next:
                             self.tail = prev
                     self.length -= 1
                     return
@@ -54,7 +54,7 @@ class OrderedList:
 
     def search(self, item):
         cur = self.head
-        while cur is not None:
+        while cur:
             if cur.data == item:
                 return True
             if cur.data > item:
@@ -67,7 +67,7 @@ class OrderedList:
         cur = self.head
         count = 0
         index = -1
-        while cur is not None:
+        while cur:
             if cur.data == item:
                 index = count
                 break
@@ -90,15 +90,15 @@ class OrderedList:
         index = 0
         prev = None
         cur = self.head
-        while cur is not None:
+        while cur:
             if index == pos:
-                if prev == None and cur.next == None:
+                if not prev and not cur.next:
                     self.head = None
                     self.tail = None
-                elif cur.next == None:
+                elif not cur.next:
                     self.tail = prev
                     self.tail.next = None
-                elif prev == None:
+                elif not prev:
                     self.head = cur.next
                 else:
                     prev.next = cur.next
@@ -114,7 +114,7 @@ class OrderedList:
         outputList = []
         cur = self.head
 
-        while cur is not None:
+        while cur:
             outputList.append(cur.data)
             cur = cur.next
 
