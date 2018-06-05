@@ -17,49 +17,49 @@ def test_insertion():
 
 
 def test_preorder():
-    a = BinaryTree(1)
-    a.left = BinaryTree(2)
-    a.left.left = BinaryTree(4)
-    a.left.right = BinaryTree(5)
-    a.right = BinaryTree(3)
-    assert list(a.preorder()) == [1, 2, 4, 5, 3]
+    root = BinaryTree(1)
+    root.left = BinaryTree(2)
+    root.left.left = BinaryTree(4)
+    root.left.right = BinaryTree(5)
+    root.right = BinaryTree(3)
+    assert list(root.preorder()) == [1, 2, 4, 5, 3]
 
 
 def test_inorder():
-    a = BinaryTree(1)
-    a.left = BinaryTree(2)
-    a.left.left = BinaryTree(4)
-    a.left.right = BinaryTree(5)
-    a.right = BinaryTree(3)
-    assert list(a.inorder()) == [4, 2, 5, 1, 3]
+    root = BinaryTree(1)
+    root.left = BinaryTree(2)
+    root.left.left = BinaryTree(4)
+    root.left.right = BinaryTree(5)
+    root.right = BinaryTree(3)
+    assert list(root.inorder()) == [4, 2, 5, 1, 3]
 
 
 def test_postorder():
-    a = BinaryTree(1)
-    a.left = BinaryTree(2)
-    a.left.left = BinaryTree(4)
-    a.left.right = BinaryTree(5)
-    a.right = BinaryTree(3)
-    assert list(a.postorder()) == [4, 5, 2, 3, 1]
+    root = BinaryTree(1)
+    root.left = BinaryTree(2)
+    root.left.left = BinaryTree(4)
+    root.left.right = BinaryTree(5)
+    root.right = BinaryTree(3)
+    assert list(root.postorder()) == [4, 5, 2, 3, 1]
 
 
 def test_levelorder():
-    a = BinaryTree(1)
-    a.left = BinaryTree(2)
-    a.left.left = BinaryTree(4)
-    a.left.right = BinaryTree(5)
-    a.right = BinaryTree(3)
-    a.right.left = BinaryTree(6)
-    a.right.right = BinaryTree(7)
-    assert list(a.levelorder()) == [1, 2, 3, 4, 5, 6, 7]
+    root = BinaryTree(1)
+    root.left = BinaryTree(2)
+    root.left.left = BinaryTree(4)
+    root.left.right = BinaryTree(5)
+    root.right = BinaryTree(3)
+    root.right.left = BinaryTree(6)
+    root.right.right = BinaryTree(7)
+    assert list(root.levelorder()) == [1, 2, 3, 4, 5, 6, 7]
 
 
 def test_levelordernested():
-    a = BinaryTree(1)
-    a.left = BinaryTree(2)
-    a.left.left = BinaryTree(4)
-    a.left.right = BinaryTree(5)
-    a.right = BinaryTree(3)
-    a.right.left = BinaryTree(6)
-    a.right.right = BinaryTree(7)
-    assert list(a.levelordernested()) == [[1], [2, 3], [4, 5, 6, 7]]
+    root = BinaryTree(1)
+    root.left = BinaryTree(2)
+    root.left.left = BinaryTree(4)
+    root.left.right = BinaryTree(5)
+    root.right = BinaryTree(3)
+    root.right.left = BinaryTree(6)
+    root.right.right = BinaryTree(7)
+    assert list(root.levelordernested()) == [[1], [2, 3], [4, 5, 6, 7]]

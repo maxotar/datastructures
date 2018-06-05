@@ -61,10 +61,8 @@ class BinaryTree:
             output.append([node.data for node in nodes])
             next_nodes = []
             for node in nodes:
-                if node.left:
-                    next_nodes.append(node.left)
-                if node.right:
-                    next_nodes.append(node.right)
+                next_nodes.append(node.left) if node.left else()
+                next_nodes.append(node.right) if node.right else()
             nodes = next_nodes
 
         return output
