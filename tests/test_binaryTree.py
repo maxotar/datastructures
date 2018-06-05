@@ -52,3 +52,14 @@ def test_levelorder():
     a.right.left = BinaryTree(6)
     a.right.right = BinaryTree(7)
     assert list(a.levelorder()) == [1, 2, 3, 4, 5, 6, 7]
+
+
+def test_levelordernested():
+    a = BinaryTree(1)
+    a.left = BinaryTree(2)
+    a.left.left = BinaryTree(4)
+    a.left.right = BinaryTree(5)
+    a.right = BinaryTree(3)
+    a.right.left = BinaryTree(6)
+    a.right.right = BinaryTree(7)
+    assert list(a.levelordernested()) == [[1], [2, 3], [4, 5, 6, 7]]

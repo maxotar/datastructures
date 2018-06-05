@@ -54,7 +54,35 @@ class BinaryTree:
             myq.enqueue(cur.left) if cur.left else()
             myq.enqueue(cur.right) if cur.right else()
 
+    def levelordernested(self):
+        output = []
+        nodes = [self]
+        while nodes:
+            output.append([node.data for node in nodes])
+            next_nodes = []
+            for node in nodes:
+                if node.left:
+                    next_nodes.append(node.left)
+                if node.right:
+                    next_nodes.append(node.right)
+            nodes = next_nodes
 
+        return output
+
+# nests = [1, 2, [3, 4, [5],['hi']], [6, [[[7, 'hello']]]]]
+
+# def flatten(container):
+#     for i in container:
+#         if isinstance(i, (list,tuple)):
+#             for j in flatten(i):
+#                 yield j
+#         else:
+#             yield i
+
+# print list(flatten(nests))
+
+
+# flatten list and performance https://stackoverflow.com/a/45323085
 # Iterator --> https://stackoverflow.com/questions/19151/build-a-basic-python-iterator#24377
 # Amazing --> https://codereview.stackexchange.com/questions/183942/use-generator-to-do-inorder-traversal
 # Very good --> http://thatmattbone.com/binary-tree-traversal-in-python-with-generators.html
