@@ -75,25 +75,17 @@ class BinarySearchTree:
         return self.right.maxNode() if self.right else self
 
     def remove(self, item):
-        if not self:
-            return self
         if item < self.data:
             self.left = self.left.remove(item)
-        elif(item > self.data):
+        elif item > self.data:
             self.right = self.right.remove(item)
-        else:
-            # Node with only one child or no child
+        else:  # item == data
             if not self.left:
-                temp = self.right
-                self = None
-                return temp
+                return self.right
             elif not self.right:
-                temp = self.left
-                self = None
-                return temp
-            else:
-                # Node with two children: Get the inorder successor
-                # (smallest in the right subtree)
+                return self.left
+            else:  # Node with two children
+                # Get the inorder successor (smallest in the right subtree)
                 temp = self.right.minNode()
                 # Copy the inorder successor's content to this node
                 self.data = temp.data
