@@ -28,13 +28,6 @@ class BinaryTree:
         yield from self.left.preorder() if self.left else()
         yield from self.right.preorder() if self.right else()
 
-        # # Alternative method using extend
-        # nodes = []
-        # nodes.append(self.data)
-        # nodes.extend(self.left.preorder()) if self.left else()
-        # nodes.extend(self.right.preorder()) if self.right else()
-        # return nodes
-
     def inorder(self):
         yield from self.left.inorder() if self.left else()
         yield self.data
@@ -67,23 +60,19 @@ class BinaryTree:
 
         return output
 
-# nests = [1, 2, [3, 4, [5],['hi']], [6, [[[7, 'hello']]]]]
+    def height(self):
+        if self.left:
+            heightLeft = self.left.height()
+        else:
+            heightLeft = 0
+        if self.right:
+            heightRight = self.right.height()
+        else:
+            heightRight = 0
+        return 1 + max(heightLeft, heightRight)
 
-# def flatten(container):
-#     for i in container:
-#         if isinstance(i, (list,tuple)):
-#             for j in flatten(i):
-#                 yield j
-#         else:
-#             yield i
+    def toList(self):
+        return list(self.levelorder())
 
-# print list(flatten(nests))
-
-
-# flatten list and performance https://stackoverflow.com/a/45323085
-# Iterator --> https://stackoverflow.com/questions/19151/build-a-basic-python-iterator#24377
-# Amazing --> https://codereview.stackexchange.com/questions/183942/use-generator-to-do-inorder-traversal
-# Very good --> http://thatmattbone.com/binary-tree-traversal-in-python-with-generators.html
-# https://github.com/joowani/binarytree
-# https://medium.com/the-renaissance-developer/learning-tree-data-structure-27c6bb363051
-# https://www.geeksforgeeks.org/?p=2686
+    def __str__(self):
+        return str(list(self.levelorder()))

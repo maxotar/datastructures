@@ -63,3 +63,47 @@ def test_levelordernested():
     root.right.left = BinaryTree(6)
     root.right.right = BinaryTree(7)
     assert list(root.levelordernested()) == [[1], [2, 3], [4, 5, 6, 7]]
+
+
+def test_toList():
+    root = BinaryTree(1)
+    root.left = BinaryTree(2)
+    root.left.left = BinaryTree(4)
+    root.left.right = BinaryTree(5)
+    root.right = BinaryTree(3)
+    root.right.left = BinaryTree(6)
+    root.right.right = BinaryTree(7)
+    assert root.toList() == [1, 2, 3, 4, 5, 6, 7]
+
+
+def test___str__():
+    root = BinaryTree(1)
+    root.left = BinaryTree(2)
+    root.left.left = BinaryTree(4)
+    root.left.right = BinaryTree(5)
+    root.right = BinaryTree(3)
+    root.right.left = BinaryTree(6)
+    root.right.right = BinaryTree(7)
+    assert root.__str__() == str([1, 2, 3, 4, 5, 6, 7])
+
+
+def test_height():
+    root = BinaryTree(1)
+    root.left = BinaryTree(2)
+    root.left.left = BinaryTree(4)
+    root.left.right = BinaryTree(5)
+    root.right = BinaryTree(3)
+    root.right.left = BinaryTree(6)
+    root.right.right = BinaryTree(7)
+    assert root.height() == 3
+
+# def test_remove():
+#     root = BinaryTree(1)
+#     root.left = BinaryTree(2)
+#     root.left.left = BinaryTree(4)
+#     root.left.right = BinaryTree(5)
+#     root.right = BinaryTree(3)
+#     root.right.left = BinaryTree(6)
+#     root.right.right = BinaryTree(7)
+#     assert list(root.levelorder()) == [1, 2, 3, 4, 5, 6, 7]
+#     root.remove(
