@@ -7,6 +7,12 @@ Some data structures and tests in python.
 - [x] Deque
 - [x] Node
 - [x] Linked List
+- [ ] Doubly Linked List
+- [ ] Circular Linked List
 - [x] Ordered List
-- [ ] Binary Tree
-- [ ] Binary Search Tree
+- [x] Binary Tree
+- [x] Binary Search Tree
+- [ ] Binary Heap
+- [ ] Graph
+- [ ] Trie
+- [ ] Hash Table
