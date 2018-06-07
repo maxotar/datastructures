@@ -12,7 +12,7 @@ Some data structures and tests in python.
 - [x] Ordered List
 - [x] Binary Tree
 - [x] Binary Search Tree
-- [ ] Binary Heap
+- [x] Binary Heap
 - [ ] Graph
 - [ ] Trie
 - [ ] Hash Table
