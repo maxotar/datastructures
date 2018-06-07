@@ -59,6 +59,22 @@ class Test_utility:
         assert mylist.index(1) == 2
         assert mylist.index(4) == -1
 
+    def test_reverse(self):
+        mylist = LinkedList()
+        mylist.add(1)
+        mylist.add(2)
+        mylist.add(3)
+        assert mylist.toList() == [3, 2, 1]
+        mylist.reverse()
+        assert mylist.toList() == [1, 2, 3]
+        mylist.reverse()
+        assert mylist.toList() == [3, 2, 1]
+
+    def test_reverse_empty(self):
+        mylist = LinkedList()
+        mylist.reverse()
+        assert mylist.toList() == []
+
 
 class Test_insert:
     def test_missing_arg(self):
@@ -114,6 +130,8 @@ class Test_insert:
         mylist.add(3)
         mylist.add(4)
         mylist.insert(2, 17)
+        mylist.reverse()
+        mylist.reverse()
         assert mylist.toList() == [4, 3, 17, 2, 1]
         assert mylist.size() == 5
 
@@ -219,6 +237,8 @@ class Test_pop:
         mylist.add(1)
         mylist.add(2)
         mylist.add(3)
+        mylist.reverse()
+        mylist.reverse()
         assert mylist.pop(0) == 3
         assert mylist.size() == 2
 

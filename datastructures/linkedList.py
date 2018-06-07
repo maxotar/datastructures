@@ -158,3 +158,16 @@ class LinkedList:
 
     def __str__(self):
         return str(self.toList())
+
+    def reverse(self):
+        if self.head:
+            if self.head.next:
+                prev = None
+                cur = self.head
+                self.tail = self.head
+                while cur:
+                    next = cur.next
+                    cur.next = prev
+                    prev = cur
+                    cur = next
+                self.head = prev
