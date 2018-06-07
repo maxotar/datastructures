@@ -15,4 +15,5 @@ Some data structures and tests in python.
 - [x] Binary Heap
 - [ ] Graph
 - [ ] Trie
-- [ ] Hash Table
+- [ ] Hash Table Open Addressing
+- [ ] Hash Table Separate Chaining
