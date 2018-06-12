@@ -88,7 +88,10 @@ class KeyValueLinkedList:
                 if prev:
                     prev.next = cur.next
                 else:
-                    self.head = None
+                    if cur.next:
+                        self.head = cur.next
+                    else:
+                        self.head = None
                 return
             else:
                 prev = cur

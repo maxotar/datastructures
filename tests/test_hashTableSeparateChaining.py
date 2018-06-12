@@ -47,3 +47,15 @@ def test_delete():
         myht['two'] = 'cat'
         myht.delete('two')
         myht['two']
+
+
+def test_delete_2():
+    myht = HashTableSeparateChaining()
+    myht['one'] = 'dog'
+    myht['two'] = 'cat'
+    myht['three'] = 'horse'
+    del myht['two']
+    assert myht['one'] == 'dog'
+    myht['three'] = 'horse'
+    del myht['one']
+    del myht['three']
