@@ -34,25 +34,30 @@ class LinkedList:
         return False
 
     def remove(self, item):
-        if self.length > 0:
-            prev = None
-            cur = self.head
-            while cur:
-                if cur.data == item:
-                    if self.length == 1:
+        prev = None
+        cur = self.head
+        while cur:
+            if cur.data == item:
+                if prev:  # Not first element
+                    if cur == self.tail:  # Last element
+                        self.tail = prev
+                        self.tail.next = None
+                    else:  # Middle element
+                        prev.next = cur.next
+                else:  # First element
+                    if cur == self.tail:  # Only one element
                         self.head = None
                         self.tail = None
-                    elif not prev:
+                    else:  # Not the only element
                         self.head = cur.next
-                    else:
-                        prev.next = cur.next
-                        if not cur.next:
-                            self.tail = prev
-                    self.length -= 1
-                    return
-                else:
-                    prev = cur
-                    cur = cur.next
+                self.length -= 1
+                return True
+            elif cur.next == self.head:  # Didn't find it
+                break
+            else:
+                prev = cur
+                cur = cur.next
+        return False
 
     def append(self, item):
         newNode = Node(item)
@@ -126,15 +131,15 @@ class LinkedList:
         cur = self.head
         while cur:
             if index == pos:
-                if not prev and not cur.next:
+                if not prev and not cur.next:  # Only one element
                     self.head = None
                     self.tail = None
-                elif not cur.next:
+                elif not cur.next:  # Last element
                     self.tail = prev
                     self.tail.next = None
-                elif not prev:
+                elif not prev:  # First element
                     self.head = cur.next
-                else:
+                else:  # Middle element
                     prev.next = cur.next
 
                 self.length -= 1
