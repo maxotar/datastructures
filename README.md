@@ -6,7 +6,7 @@ Some data structures and tests in python.
 - [x] Queue
 - [x] Deque
 - [x] Linked List
-- [ ] Doubly Linked List
+- [x] Doubly Linked List
 - [x] Circular Linked List
 - [x] Ordered List
 - [x] Binary Tree
