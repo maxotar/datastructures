@@ -47,17 +47,17 @@ class DoublyLinkedList:
             if cur.data == data:  # Found the element
                 if self.length == 0:  # No elements
                     return False
-                elif self.length == 1:  # One element
+                elif self.length == 1:  # Only one element
                     self.head = None
                     self.tail = None
                     self.length -= 1
                     return True
-                elif prev is None:  # First element
+                elif not prev:  # First element of many
                     self.head = cur.next
                     self.head = None
                     self.length -= 1
                     return True
-                elif cur == self.tail:  # Last element
+                elif cur == self.tail:  # Last element of many
                     self.tail = prev
                     self.tail.next = None
                     self.length -= 1
