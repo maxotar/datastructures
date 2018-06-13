@@ -13,6 +13,6 @@ Some data structures and tests in python.
 - [x] Binary Search Tree
 - [x] Binary Heap
 - [ ] Graph
-- [ ] Trie
+- [x] Trie
 - [x] Hash Table Open Addressing
 - [x] Hash Table Separate Chaining
